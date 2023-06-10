@@ -1,0 +1,63 @@
+* { 
+    user-select: none;
+}
+body {
+    background-color: #e2d8c7;
+}
+#main {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 15%;
+    left: 20%;
+    gap: 2%;
+}
+#firstBox, #secondBox {
+    position: relative;
+    box-shadow: 2px 2px rgb(165, 156, 156);
+    box-shadow: -2px -2px rgb(171, 153, 153);
+    height: 60vh;
+    width: 30vw;
+    background-color: #dfdad1;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 10px;
+}
+.todoItems {
+    width: 40%;
+    padding: 10px;
+    box-shadow: -3px -3px rgb(130, 113, 113);
+    border-radius: 10px;
+    font-size: 15px;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+    text-align : center;
+    font-family : "Lucida Console", "Courier New", monospace;
+}
+#btn {
+    position: relative;
+    top: 70vh;
+    left: 43vw;
+    width: 10vw;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #e2d8c7;
+}
+
+@keyframes glow-border {
+    
+    50% {
+      border-color: #89e173;
+      box-shadow: 0 0 5px #07bf17;
+    }
+    
+  }
+
+  .glowingBorder {
+    border: 2px solid transparent;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    animation: glow-border 2s ease-in-out;
+  }

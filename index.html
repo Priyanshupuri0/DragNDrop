@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "style.css">
+    <title>Drag and Drop</title>
+    <script>
+        function allowDrop(ev) {
+          ev.preventDefault();  // This is used to prevent the default behaviour of browser i.e. to prevent refresh of webpage
+        }
+        
+        function drag(ev) {
+          let data = document.getElementById('secondBox');
+          ev.dataTransfer.setData("text", ev.target.id);
+          data.classList.remove('glowingBorder'); // When any to do item is being dragged we simply remove the glowingBorder class from it so that it can be re-rendered when another to-do item is dragged.
+        }
+        
+        function drop(ev) {
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("text");
+          ev.target.appendChild(document.getElementById(data));
+          ev.target.classList.add('glowingBorder');
+          
+        }
+        function resetWindow() {
+            location.reload();  // Reset button will simply reload the page.
+        }
+        </script>
+</head>
+<body>
+    <h1>Drag and Drop</h1>
+    <div id = "main" > <!-- This is the main container of the webpage which contains two boxes i.e. firstBox and secondBox -->
+        <div id = "firstBox"> <!-- This is To-do box -->
+            <h2>To-do</h2>
+            <!-- Each to do item belongs to same class so that we can easily implement the same function to each of the items -->
+            <div id="todo1" class="todoItems" draggable="true" ondragstart="drag(event)">Go to Gym</div>
+            <div id="todo2" class="todoItems" draggable="true" ondragstart="drag(event)">Work on assignment</div>
+            <div id="todo3" class="todoItems" draggable="true" ondragstart="drag(event)">Quick overview</div>
+            <div id="todo4" class="todoItems" draggable="true" ondragstart="drag(event)">Generate a Report</div>
+            <div id="todo5" class="todoItems" draggable="true" ondragstart="drag(event)">Deliver the Report</div>
+        </div>
+        <div id = "secondBox" ondrop = "drop(event)" ondragover = "allowDrop(event)"> <!-- This is Completed box -->
+            <h2 style = "text-align : center;">Completed</h2>
+        </div>
+    </div>
+    <button id = "btn" onclick="resetWindow()">Reset</button>
+</body>
+</html>
+
+<!-- Instruction for testing the code -->
+<!-- Drag any of the to-do item in completed box and check the behaviour of border of the second box when item is dropped. -->
