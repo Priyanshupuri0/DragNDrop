@@ -61,9 +61,12 @@ h1 {
     transition: border-color 0.3s, box-shadow 0.3s;
     animation: glow-border 2s ease-in-out;
   }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 800px) {
     * {
         font-size: small;
+    }
+    h1 {
+        font-size: large;
     }
     #btn {
         width: 15vw;
