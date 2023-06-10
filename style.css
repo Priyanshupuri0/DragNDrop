@@ -66,9 +66,16 @@ h1 {
         font-size: small;
     }
     h1 {
-        font-size: large;
+        font-size: x-large;
     }
     #btn {
         width: 15vw;
+    }
+    #firstBox, #secondBox {
+        width: 45vw;
+        height: 55vh;
+    }
+    #main {
+        left: 5vw;
     }
 }
